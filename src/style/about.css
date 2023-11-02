@@ -1,0 +1,87 @@
+.about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 600px;
+    margin-top: 40px;
+  }
+  
+  .about-text {
+    flex: 1;
+    max-width: 50%;
+  }
+  .dark-theme .i-am{
+    color: rgb(242, 242, 242);
+  }
+
+  .light-theme .description-me, .i-am{
+    color: black;
+  }
+  .i-am {
+    font-size: 2rem;
+  }
+  .dark-theme .about-text span {
+    font-size: 3rem;
+    background: #9dc2cf;
+    background: linear-gradient(to right, #9dc2cf 0%, #cb8cd0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .light-theme .about-text span{
+    background: #85a5b0;
+    background: linear-gradient(to right, #85a5b0 0%, #95489a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .description-me {
+    font-size: 20px;
+    
+  }
+  .dark-theme .learn-more-btn{
+    padding: 10px;
+    font-size: 1.2rem;
+    background: none;
+    color: white;
+    border: 1px solid #00ffcc;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+
+  .light-theme .learn-more-btn{
+    padding: 10px;
+    font-size: 1.2rem;
+    background: none;
+    color: black;
+    border: 1px solid #6B9080;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  .dark-theme .learn-more-btn:hover{
+    background: #3dc991;
+    color: black;
+    border: 1px solid rgb(36, 36, 36);
+  }
+  .light-theme .learn-more-btn:hover{
+    background: #a4b8c0;
+    color: black;
+    border: 1px solid #1f1f1f;
+  }
+  .me-portrait {
+    max-width: 27%;
+    border-radius: 12px;
+    transition: transform 0.3s;
+  }
+  
+  .dark-theme .me-portrait:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px rgba(71, 190, 163, 0.8);
+  }
+
+  .light-theme .me-portrait:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px rgba(74, 74, 74, 0.8);
+  }
+

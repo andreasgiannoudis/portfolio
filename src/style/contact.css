@@ -1,0 +1,26 @@
+.dark-theme .contact {
+    background-color: #001523;
+  }
+  
+.light-theme .contact{
+    background-color: #a4b8c0;
+    color: black;
+}
+.contact h2{
+    font-size: 26px;
+    text-align: center;
+  }
+  
+  .contact .icons {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+  .contact .icons a {
+    margin: 0 6px;
+  }
+  
+  .contact i img {
+    width: 35px;
+  }
