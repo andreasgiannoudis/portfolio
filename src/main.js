@@ -16,7 +16,7 @@ typedAnimation(
   [
     "Andreas Giannoudis",
     "webbutvecklare!",
-    "en problemlösare!",
+    "problemlösare!",
     "ambitös!",
   ],
   40,
