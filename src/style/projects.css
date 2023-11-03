@@ -29,6 +29,7 @@
   }
   .card{
     flex: 0 0 auto;
+    position: relative;
     margin: 5px;
     height: 400px;
     width: 320px;
@@ -65,7 +66,7 @@
   .desc{
     width: 100%;
     text-align: center;
-    position: fixed;
+    position: absolute;
     top: 160px;
   }
   .primary-text{
@@ -101,7 +102,7 @@
     background-color: rgba(255, 255, 255, 0.06);
     -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
-    position: fixed;
+    position: absolute;
     bottom: 0;
     border-radius: 0 0 8px 8px;
   }
@@ -114,7 +115,7 @@
   .button{
     width: 80%;
     padding: 15px 0;
-    position: fixed;
+    position: absolute;
     left: 10%;
     top: 240px;
     border-radius: 5px;
