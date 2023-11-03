@@ -230,12 +230,16 @@ section {
     margin: 10px 0; 
     width: 85%;
   }
+  .front-end-skills:hover,
+  .back-end-skills:hover{
+    transform: scale(1.03);
+  }
 
   .card {
     width: 90%; 
   }
 
   .button {
-    /* top: 250px;  */
+    top: 250px; 
   }
 }
