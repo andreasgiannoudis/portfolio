@@ -208,7 +208,8 @@ section {
   }
 
   .about-text {
-    max-width: 100%;
+    max-width: 90%;
+    text-align: center;
   }
   #typed-text{
     font-size: 2rem;
@@ -235,6 +236,6 @@ section {
   }
 
   .button {
-    top: 250px; 
+    /* top: 250px;  */
   }
 }
