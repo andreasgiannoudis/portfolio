@@ -7,7 +7,7 @@ function scrollBehavior() {
 
     if (currentScrollPosition > lastScrollPosition) {
       // Scrolling down, hide the navigation bar
-      nav.style.transform = 'translateY(-100%)';
+      nav.style.transform = 'translateY(-130%)';
     } else {
       // Scrolling up, show the navigation bar
       nav.style.transform = 'translateY(0)';

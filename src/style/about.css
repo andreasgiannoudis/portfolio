@@ -30,6 +30,7 @@
     -webkit-text-fill-color: transparent;
   }
   .light-theme .about-text span{
+    font-size: 3rem;
     background: #85a5b0;
     background: linear-gradient(to right, #85a5b0 0%, #95489a 100%);
     -webkit-background-clip: text;

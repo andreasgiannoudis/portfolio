@@ -6,61 +6,188 @@ import webbshopp from './img/projects-img/webbshopp.png';
 import weatherApp from './img/projects-img/weather-app.png';
 import rps from './img/projects-img/rps.png';
 scrollBehavior();//scroll behavior for the nav bar
+const languageData = {
+  en: {
+    navAboutMe: "About me",
+    navSkills: "Skills",
+    navProjects: "Projects",
+    navContact: "Contact",
+    webbshopName: "Web Shop",
+    webbshopDescription: "Web shop using React and Node.js. You can add products to the cart and 'purchase' them (no real payment).",
+    stenSaxPaseName: "Rock Paper Scissors",
+    stenSaxPaseDescription: "Rock, paper, scissors game. You can play against the computer and see the top 5 players and their high scores.",
+    vaderAppName: "Weather App",
+    vaderAppDescription: "Weather application. You can search for a city and choose how many hours of forecast you want to see.",
+    projectsTitle: "My challenges",
+    projectsDescription: "As a web developer, I love taking on new and exciting challenges. I have worked on different types of projects, from e-commerce to games to weather apps. Every project has taught me something new and developed my skills!",
+    whoAmI: "Who am I?",
+    iAm: "I am",
+    descriptionMe: "I am a web development student with a focus on e-commerce at Grit Academy in Malmö. I am passionate about creating modern and user-friendly websites and applications using HTML, CSS, JavaScript, React and Node.js. So far I have developed some projects that show my skills and my creativity. Right now I'm creating a blog app using React and Firebase.",
+    ShowMoreBtn: "Show more",
+    mySkills: "My Skills",
+    frontEndSkills: "Front-end Skills",
+    backEndSkills: "Back-end Skills",
+    contact: "Contact me",
+    typedName: "Andreas Giannoudis",
+    typedOccupation1: "web developer!",
+    typedOccupation2: "problem solver!",
+    typedOccupation3: "ambitious!",
+    cvPath: './assets/cv_en.pdf',
+  },
+  sv: {
+    navAboutMe: "Om mig",
+    navSkills: "Kompetenser",
+    navProjects: "Projekt",
+    navContact: "Kontakt",
+    webbshopName: "Webbshop",
+    webbshopDescription: "Webbshop med hjälp av React och Node.js. Du kan lägga till produkter i varukorgen och 'köpa' dem (ingen riktig betalning).",
+    stenSaxPaseName: "Sten Sax Påse",
+    stenSaxPaseDescription: "Sten, sax, påse-spel. Du kan spela mot datorn och se de 5 bästa spelarna och deras högsta poäng.",
+    vaderAppName: "Väder App",
+    vaderAppDescription: "Väderapplikation. Du kan söka efter en stad och välja hur många timmars prognos du vill se.",
+    projectsTitle: "Mina utmaningar",
+    projectsDescription: "Som webbutvecklare älskar jag att ta mig an nya och spännande utmaningar. Jag har arbetat med olika typer av projekt, från e-handel till spel till väderappar. Varje projekt har lärt mig något nytt och utvecklat mina färdigheter!",
+    whoAmI: "Vem är jag?",
+    iAm: "Jag är",
+    descriptionMe: " Jag är en webbutvecklingsstudent med fokus på e-handel vid Grit Academy i Malmö. Jag brinner för att skapa moderna och användarvänliga webbplatser och applikationer med hjälp av HTML, CSS, JavaScript, React och Node.js. Hittills har jag utvecklat några projekt som visar mina kunskaper och min kreativitet. Just nu håller jag på att skapa en blogg app med hjälp av React och Firebase.",
+    ShowMoreBtn: "Läs mer",
+    mySkills: "Mina Kompetenser",
+    frontEndSkills: "Front-end Kompetenser",
+    backEndSkills: "Back-end Kompetenser",
+    contact: "Kontakta mig",
+    typedName: "Andreas Giannoudis",
+    typedOccupation1: "webbutvecklare!",
+    typedOccupation2: "problemlösare!",
+    typedOccupation3: "ambitös!",
+    cvPath: './assets/cv_swe.pdf',
+  }
+};
 
 
+const languageSelect = document.querySelector('#language-select');
+
+const languageOptions = [
+  { code: 'sv', label: 'Swedish'},
+  { code: 'en', label: 'English'}
+];
+
+
+function populateLanguageOptions() {
+  for (const language of languageOptions) {
+    const option = document.createElement('option');
+    option.value = language.code;
+    option.textContent = language.label;
+    languageSelect.appendChild(option);
+  }
+
+  // default language sv
+  languageSelect.value = 'sv';
+}
+
+
+
+
+function updatePageLanguage() {
+  const textElements = document.querySelectorAll('[data-i18n]');
+
+  textElements.forEach((element) => {
+    const translationKey = element.getAttribute('data-i18n');
+    element.textContent = languageData[currentLanguage][translationKey];
+  });
+}
+
+
+// Set the initial language to Swedish
+let currentLanguage = 'sv';
 //typed text that will appear in the about section
 const typedText = document.querySelector("#typed-text");
 
-typedAnimation(
-  typedText, //the animation to be animated to the typed text and has different
+let typeInstance = typedAnimation(
+  typedText,
   [
-    "Andreas Giannoudis",
-    "webbutvecklare!",
-    "problemlösare!",
-    "ambitös!",
+    "typedName",
+    "typedOccupation1",
+    "typedOccupation2",
+    "typedOccupation3",
   ],
   40,
   25,
   1500,
-  true
+  true,
+  languageData,
+  currentLanguage
 );
+updatePageLanguage();
+// Call the function to populate the dropdown
+populateLanguageOptions();
 
+document.addEventListener('DOMContentLoaded', () => {
+  // Call the updatePageLanguage function when the page is loaded
+  updatePageLanguage();
+  const cvLink = document.getElementById('cv-link');
+  cvLink.href = languageData[currentLanguage].cvPath;
+});
 
+languageSelect.addEventListener('change', (event) => {
+  currentLanguage = event.target.value;
+  updatePageLanguage();
+  typeInstance.destroy();
+  // Reinitialize Typed with the updated translation keys
+  typeInstance = typedAnimation(
+    typedText,
+    [
+      "typedName",
+      "typedOccupation1",
+      "typedOccupation2",
+      "typedOccupation3",
+    ],
+    40,
+    25,
+    1500,
+    true,
+    languageData,
+    currentLanguage
+  );
+
+  const cvLink = document.getElementById('cv-link');
+  cvLink.href = languageData[currentLanguage].cvPath;
+});
 
 
 //array for the projects i want to show on page
 const projectsArray = [
   {
-    name: "Webbshop",
-    description: "Webbshop med hjälp av React och nodejs. Det går att lägga till produkter i kundvagnen och att köpa (inte riktigt betalning)!",
+    nameTranslationKey: 'webbshopName',
+    descriptionTranslationKey: 'webbshopDescription',
     image: webbshopp,
-    link: "https://github.com/andreasgiannoudis/webb23-js2-slutprojekt-andreas-giannoudis",
+    link: 'https://github.com/andreasgiannoudis/webb23-js2-slutprojekt-andreas-giannoudis',
     stats: {
       htmlCss: 26.2,
       javascript: 73.8,
     },
   },
   {
-    name: "Sten sax påse",
-    description: "Sten sax påse spel. Det går att spela mot datorn. Visas alltid de 5 högsta spelare och deras highscore.",
+    nameTranslationKey: 'stenSaxPaseName',
+    descriptionTranslationKey: 'stenSaxPaseDescription',
     image: rps,
-    link: "https://github.com/andreasgiannoudis/webb23-js2-inlamning1-andreas-giannoudis.git",
+    link: 'https://github.com/andreasgiannoudis/webb23-js2-inlamning1-andreas-giannoudis.git',
     stats: {
       htmlCss: 24.9,
       javascript: 75.1,
-    }
+    },
   },
   {
-    name: "Väder app",
-    description: "Väder applikation. Man söker en stad och väljer hur många timmars prognos man vill se.",
+    nameTranslationKey: 'vaderAppName',
+    descriptionTranslationKey: 'vaderAppDescription',
     image: weatherApp,
-    link: "https://andreasgiannoudis.github.io/webb23-js1-slutprojekt-andreas-giannoudis/",
+    link: 'https://andreasgiannoudis.github.io/webb23-js1-slutprojekt-andreas-giannoudis/',
     stats: {
       htmlCss: 26.7,
-      javascript: 72.3
-    }
-  }
+      javascript: 72.3,
+    },
+  },
 ];
+
 
 const container = document.querySelector('.cards');
 
@@ -76,36 +203,43 @@ for (const project of projectsArray) {
 
   const projectImg = document.createElement('img');
   const imgUrl = new URL(project.image, import.meta.url);
-  projectImg.src = imgUrl.href; 
+  projectImg.src = imgUrl.href;
   cardImg.append(projectImg);
-  
+
   const desc = document.createElement('div');
   desc.classList.add('desc');
   card.append(desc);
 
+  // Project Name
   const projectName = document.createElement('h6');
   projectName.classList.add('primary-text');
-  projectName.textContent = project.name;
+  projectName.setAttribute('data-i18n', project.nameTranslationKey);
   desc.append(projectName);
 
+  // Project Description
   const projectDescription = document.createElement('h6');
   projectDescription.classList.add('secondary-text');
-  projectDescription.textContent = project.description;
+  projectDescription.setAttribute('data-i18n', project.descriptionTranslationKey);
   desc.append(projectDescription);
 
+  // Project Link
   const projectLink = document.createElement('a');
   projectLink.href = project.link;
   card.append(projectLink);
 
+  // Project Button
   const projectButton = document.createElement('button');
   projectButton.classList.add('primary-text', 'button');
-  projectButton.textContent = `Visa ${project.name}`;
+  projectButton.setAttribute('data-i18n', project.nameTranslationKey);
+  projectButton.textContent = `Visa ${project.nameTranslationKey}`;
   projectLink.append(projectButton);
 
+  // Project Details
   const details = document.createElement('div');
   details.classList.add('details');
   card.append(details);
 
+  // Rating HTML/CSS
   const ratingHTMLCSS = document.createElement('div');
   ratingHTMLCSS.classList.add('rating');
   details.append(ratingHTMLCSS);
@@ -120,6 +254,7 @@ for (const project of projectsArray) {
   ratingHTMLCSSText.textContent = 'HTML/CSS';
   ratingHTMLCSS.append(ratingHTMLCSSText);
 
+  // Rating JavaScript
   const ratingJavaScript = document.createElement('div');
   ratingJavaScript.classList.add('activity');
   details.append(ratingJavaScript);
@@ -133,6 +268,7 @@ for (const project of projectsArray) {
   ratingJavaScriptText.classList.add('secondary-text');
   ratingJavaScriptText.textContent = 'JavaScript';
   ratingJavaScript.append(ratingJavaScriptText);
+
 }
 
 

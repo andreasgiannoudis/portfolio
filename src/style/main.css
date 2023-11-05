@@ -139,6 +139,14 @@ section {
 
 }
 
+.arrow-up{
+  position: relative;
+  bottom: 0px;
+  margin-left: 90%;
+  z-index: 999;
+  cursor: pointer;
+}
+
 
 .footer {
   text-align: center;
