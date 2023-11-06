@@ -195,11 +195,18 @@ section {
   .container {
     width: 90%;
   }
-  .card {
-    width: calc(50% - 10px); 
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
   }
+
+  .card {
+    width: calc(50% - 10px);
+  }
+
   .button {
-    top: 255px; 
+    top: auto;
+    bottom: 90px; 
   }
 }
 
@@ -260,11 +267,17 @@ section {
     transform: scale(1.03);
   }
 
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .card {
-    width: 90%; 
+    width: 90%;
   }
 
   .button {
-    top: 250px; 
+    top: auto; /* Reset the top property */
+    bottom: 90px; /* Adjust to your desired position */
   }
 }
