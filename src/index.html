@@ -13,6 +13,7 @@
   </head>
 
   <body class="dark-theme">
+
     <div class="language-selector">
       <label for="language-select">Select Language: </label>
       <select id="language-select">
@@ -22,9 +23,12 @@
     <!-- HEADER -->
     <header>
       <div class="nav dark-theme">
-        <a href="#"><img src="./img/logo-me.jpg" alt="logo" class="logo-img" /></a> 
+        <a href="#"><img src="./img/logo-me.jpg" alt="logo" class="logo-img" /></a>
         <nav class="navigation">
-          <ul>
+          <label for="menu-toggle" class="menu-icon" id="menu-icon">
+            <img src="./img/icons/hamburger.png" alt="Menu" />
+          </label>
+          <ul id="menu-items">
             <li><a href="#about" data-i18n="navAboutMe">Om mig</a></li>
             <li><a href="#skills" data-i18n="navSkills">Kompetenser</a></li>
             <li><a href="#projects" data-i18n="navProjects">Projekt</a></li>
@@ -32,11 +36,9 @@
           </ul>
         </nav>
         <i class="bi bi-brightness-high-fill" id="toggleDark"></i>
-
-       
-
       </div>
-    </header>    
+    </header>
+        
 
     <!-- ABOUT SECTION -->
     <section id="about">

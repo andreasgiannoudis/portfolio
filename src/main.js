@@ -6,6 +6,11 @@ import webbshopp from './img/projects-img/webbshopp.png';
 import weatherApp from './img/projects-img/weather-app.png';
 import rps from './img/projects-img/rps.png';
 scrollBehavior();//scroll behavior for the nav bar
+
+
+
+
+//translations of all the contents of the page in english and swedish
 const languageData = {
   en: {
     navAboutMe: "About me",
@@ -65,7 +70,7 @@ const languageData = {
 
 
 const languageSelect = document.querySelector('#language-select');
-
+//language select options
 const languageOptions = [
   { code: 'sv', label: 'Swedish'},
   { code: 'en', label: 'English'}
@@ -84,9 +89,6 @@ function populateLanguageOptions() {
   languageSelect.value = 'sv';
 }
 
-
-
-
 function updatePageLanguage() {
   const textElements = document.querySelectorAll('[data-i18n]');
 
@@ -97,8 +99,9 @@ function updatePageLanguage() {
 }
 
 
-// Set the initial language to Swedish
+//setting the initial language to Swedish
 let currentLanguage = 'sv';
+
 //typed text that will appear in the about section
 const typedText = document.querySelector("#typed-text");
 
@@ -118,11 +121,11 @@ let typeInstance = typedAnimation(
   currentLanguage
 );
 updatePageLanguage();
-// Call the function to populate the dropdown
+//call the function to populate the dropdown
 populateLanguageOptions();
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Call the updatePageLanguage function when the page is loaded
+  //call the updatePageLanguage function when the page is loaded
   updatePageLanguage();
   const cvLink = document.getElementById('cv-link');
   cvLink.href = languageData[currentLanguage].cvPath;
@@ -132,7 +135,7 @@ languageSelect.addEventListener('change', (event) => {
   currentLanguage = event.target.value;
   updatePageLanguage();
   typeInstance.destroy();
-  // Reinitialize Typed with the updated translation keys
+  
   typeInstance = typedAnimation(
     typedText,
     [
@@ -272,3 +275,30 @@ for (const project of projectsArray) {
 }
 
 
+
+document.getElementById('menu-icon').addEventListener('click', function() {
+  let menuItems = document.getElementById('menu-items');
+  if (menuItems.style.display === 'flex') {
+    menuItems.style.display = 'none';
+  } else {
+    //checking if the screen is less or equal to 768px
+    if (window.innerWidth <= 768) {
+      menuItems.style.display = 'flex';
+    }
+  }
+});
+
+const menuItems = document.querySelectorAll('#menu-items li a');
+menuItems.forEach(item => {
+  item.addEventListener('click', function() {
+    //checking if the screen is less or equal to 768px
+    if (window.innerWidth <= 768) {
+      document.getElementById('menu-items').style.display = 'none';
+    }
+    const targetId = item.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
