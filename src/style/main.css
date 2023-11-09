@@ -47,16 +47,17 @@ body {
   margin-left: 10px;
 }
 
-.language-selector label {
-  margin-right: 10px;
-}
 
 .language-selector select {
   background-color: #001523;
-  color: #fff;
+  color: rgb(242, 242, 242);
   padding: 5px;
   border: 1px solid #57c7e6;
   border-radius: 3px;
+}
+
+.language-selector select:active{
+  border: 1px solid #57c7e6;
 }
 
 .nav {
