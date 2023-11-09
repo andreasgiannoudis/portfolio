@@ -72,8 +72,8 @@ const languageData = {
 const languageSelect = document.querySelector('#language-select');
 //language select options
 const languageOptions = [
-  { code: 'sv', label: 'Swedish'},
-  { code: 'en', label: 'English'}
+  { code: 'sv', label: 'SV'},
+  { code: 'en', label: 'ENG'}
 ];
 
 
@@ -302,3 +302,5 @@ menuItems.forEach(item => {
     }
   });
 });
+
+
