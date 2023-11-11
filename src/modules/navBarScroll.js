@@ -6,11 +6,11 @@ function scrollBehavior() {
     const currentScrollPosition = window.scrollY;
 
     if (currentScrollPosition > lastScrollPosition) {
-      // Scrolling down, hide the navigation bar
-      nav.style.transform = 'translateY(-130%)';
+      //scrolling down, hide the navigation bar
+      nav.style.display = 'none';
     } else {
-      // Scrolling up, show the navigation bar
-      nav.style.transform = 'translateY(0)';
+      //scrolling up, show the navigation bar
+      nav.style.display = 'flex';
     }
 
     lastScrollPosition = currentScrollPosition;

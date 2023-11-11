@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/main.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" integrity="sha512-W/zrbCncQnky/EzL+/AYwTtosvrM+YG/V6piQLSe2HuKS6cmbw89kjYkp3tWFn1dkWV7L1ruvJyKbLz73Vlgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="module" src="./main.js"></script>
     <title>Andreas Giannoudis Portfolio</title>
   </head>
@@ -20,26 +22,25 @@
     <!-- HEADER -->
     <header>
       <div class="nav dark-theme">
-        <div class="branding">
+        <div class="header-container">
           <a href="#"><img src="./img/logo-me.jpg" alt="logo" class="logo-img" /></a>
-          <div class="language-selector">
-            <label for="language-select"></label>
-            <select id="language-select"></select>
-          </div>
+          <nav id="nav">
+           
+            <ul id="nav-ul">
+              <div class="language-selector">
+                <label for="language-select"></label>
+                <select id="language-select"></select>
+              </div>
+              <li><a href="#about" data-i18n="navAboutMe">Om mig</a></li>
+              <li><a href="#skills" data-i18n="navSkills">Kompetenser</a></li>
+              <li><a href="#projects" data-i18n="navProjects">Projekt</a></li>
+              <li><a href="#contact" data-i18n="navContact">Kontakt</a></li>
+              <i class="bi bi-brightness-high-fill" id="toggleDark"></i>
+            </ul>
+            
+          </nav>
+          <span class="hamburger" id="button"><i class="fa-solid fa-bars"></i></span>
         </div>
-        <nav class="navigation">
-          <label for="menu-toggle" class="menu-icon" id="menu-icon">
-            <img src="./img/icons/hamburger.png" alt="Menu" />
-          </label>
-          <ul id="menu-items">
-            <li><a href="#about" data-i18n="navAboutMe">Om mig</a></li>
-            <li><a href="#skills" data-i18n="navSkills">Kompetenser</a></li>
-            <li><a href="#projects" data-i18n="navProjects">Projekt</a></li>
-            <li><a href="#contact" data-i18n="navContact">Kontakt</a></li>
-          </ul>
-        </nav>
-        <i class="bi bi-brightness-high-fill" id="toggleDark"></i>
-      </div>
     </header>
         
 
@@ -109,7 +110,7 @@
             </div>
           </div>
 
-          <div class= "back-end-skills ">
+          <div class= "back-end-skills">
             <h1 data-i18n="backEndSkills">Back-end kompetenser</h1>
             
             <div class= "skill-row ">
@@ -164,7 +165,7 @@
             <i><img src="./img/icons/cv.png" alt="CV" /></i>
           </a>
         </div>
-        <a href="#top" class="arrow-up"><i><img src="./img/icons/up-arrow.png"></i></a>
+        <a href="#" class="arrow-up"><i><img src="./img/icons/up-arrow.png"></i></a>
       </div>
     </section>
 

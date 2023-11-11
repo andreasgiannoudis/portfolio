@@ -1,7 +1,7 @@
 import { typedAnimation } from "./modules/typedAnimation";
 import { randomAnimation } from "./modules/animatedBackground";
 import { toggle } from "./modules/toggleDarkLightMode";
-import { scrollBehavior } from "./modules/navBarScroll";
+import {scrollBehavior} from "./modules/navBarScroll";
 import webbshopp from './img/projects-img/webbshopp.png';
 import weatherApp from './img/projects-img/weather-app.png';
 import rps from './img/projects-img/rps.png';
@@ -276,31 +276,19 @@ for (const project of projectsArray) {
 
 
 
-document.getElementById('menu-icon').addEventListener('click', function() {
-  let menuItems = document.getElementById('menu-items');
-  if (menuItems.style.display === 'flex') {
-    menuItems.style.display = 'none';
-  } else {
-    //checking if the screen is less or equal to 768px
-    if (window.innerWidth <= 768) {
-      menuItems.style.display = 'flex';
-    }
-  }
+const btn = document.getElementById('button');
+const nav = document.getElementById('nav-ul');
+
+function closeMenu() {
+  nav.classList.remove('toggle');
+}
+
+btn.addEventListener('click', function () {
+  nav.classList.toggle('toggle');
 });
 
-const menuItems = document.querySelectorAll('#menu-items li a');
-menuItems.forEach(item => {
-  item.addEventListener('click', function() {
-    //checking if the screen is less or equal to 768px
-    if (window.innerWidth <= 768) {
-      document.getElementById('menu-items').style.display = 'none';
-    }
-    const targetId = item.getAttribute('href').substring(1);
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
+const navItems = document.querySelectorAll('#nav-ul li a');
+
+navItems.forEach(function (item) {
+  item.addEventListener('click', closeMenu);
 });
-
-
