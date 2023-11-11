@@ -258,6 +258,7 @@ section {
   
   .hamburger {
     display: block; 
+    font-size: 30px;
   }
 
   .about-content {
