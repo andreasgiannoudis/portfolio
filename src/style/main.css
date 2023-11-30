@@ -3,7 +3,7 @@
 @import url('projects.css');
 @import url('contact.css');
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; 
 }
 body {
   font-family: Inter;
