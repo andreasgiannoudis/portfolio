@@ -5,6 +5,7 @@ import {scrollBehavior} from "./modules/navBarScroll";
 import webbshopp from './img/projects-img/webbshopp.png';
 import weatherApp from './img/projects-img/weather-app.png';
 import rps from './img/projects-img/rps.png';
+import mysqlPhp from './img/projects-img/php_mysql.png';
 scrollBehavior();//scroll behavior for the nav bar
 
 
@@ -23,6 +24,8 @@ const languageData = {
     stenSaxPaseDescription: "Rock, paper, scissors game. You can play against the computer and see the top 5 players and their high scores.",
     vaderAppName: "Weather App",
     vaderAppDescription: "Weather application. You can search for a city and choose how many hours of forecast you want to see.",
+    mysqlPhp: "Database and php",
+    databashanteringProjekt: "Webshop application using myql and php. A project that manages the database and web server. There is the webshop and the admin site that displays the orders.",
     projectsTitle: "My challenges",
     projectsDescription: "As a web developer, I love taking on new and exciting challenges. I have worked on different types of projects, from e-commerce to games to weather apps. Every project has taught me something new and developed my skills!",
     whoAmI: "Who am I?",
@@ -50,6 +53,8 @@ const languageData = {
     stenSaxPaseDescription: "Sten, sax, påse-spel. Du kan spela mot datorn och se de 5 bästa spelarna och deras högsta poäng.",
     vaderAppName: "Väder App",
     vaderAppDescription: "Väderapplikation. Du kan söka efter en stad och välja hur många timmars prognos du vill se.",
+    mysqlPhp: "Databashantering",
+    databashanteringProjekt: "Webshopapplikation med myql och php. Ett projekt som hanterar databasen och webbservern. Det finns webbshopen och adminsidan som visar beställningarna.",
     projectsTitle: "Mina utmaningar",
     projectsDescription: "Som webbutvecklare älskar jag att ta mig an nya och spännande utmaningar. Jag har arbetat med olika typer av projekt, från e-handel till spel till väderappar. Varje projekt har lärt mig något nytt och utvecklat mina färdigheter!",
     whoAmI: "Vem är jag?",
@@ -189,7 +194,18 @@ const projectsArray = [
       javascript: 72.3,
     },
   },
+  {
+    nameTranslationKey: 'mysqlPhp',
+    descriptionTranslationKey: 'databashanteringProjekt',
+    image: mysqlPhp,
+    link: 'https://github.com/andreasgiannoudis/databashantering.git',
+    stats: {
+      htmlCss: 0,
+      javascript: 0,
+    },
+  }
 ];
+
 
 
 const container = document.querySelector('.cards');
