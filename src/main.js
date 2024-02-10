@@ -83,8 +83,8 @@ const languageData = {
   }
 };
 
-
 const languageSelect = document.querySelector('#language-select');
+
 //language select options
 const languageOptions = [
   { code: 'sv', label: 'SV'},
@@ -142,7 +142,7 @@ populateLanguageOptions();
 document.addEventListener('DOMContentLoaded', () => {
   //call the updatePageLanguage function when the page is loaded
   updatePageLanguage();
-  const cvLink = document.getElementById('cv-link');
+  const cvLink = document.getElementById('cv-link'); 
   cvLink.href = languageData[currentLanguage].cvPath;
 });
 
