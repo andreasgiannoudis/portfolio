@@ -6,6 +6,8 @@ import webbshopp from './img/projects-img/webbshopp.png';
 import weatherApp from './img/projects-img/weather-app.png';
 import rps from './img/projects-img/rps.png';
 import mysqlPhp from './img/projects-img/php_mysql.png';
+import wordpressProjectLorum from './img/projects-img/wordpress-project-lorum.png'; 
+import wordpressProductPage from './img/projects-img/productpage.png'; 
 scrollBehavior();//scroll behavior for the nav bar
 
 
@@ -20,12 +22,14 @@ const languageData = {
     navContact: "Contact",
     webbshopName: "Web Shop",
     webbshopDescription: "Web shop using React and Node.js. You can add products to the cart and 'purchase' them (no real payment).",
+    wordpressProjectLorumName: "Wordpress Project",
     stenSaxPaseName: "Rock Paper Scissors",
     stenSaxPaseDescription: "Rock, paper, scissors game. You can play against the computer and see the top 5 players and their high scores.",
     vaderAppName: "Weather App",
     vaderAppDescription: "Weather application. You can search for a city and choose how many hours of forecast you want to see.",
     mysqlPhp: "Database and php",
     databashanteringProjekt: "Webshop application using myql and php. A project that manages the database and web server. There is the webshop and the admin site that displays the orders.",
+    wordpressProjectLorumDescription: "Wordpress project that is completely custom, own theme, used by php and wordpress editor and sass for styling. All content is dynamic. Unfortunately it's not live so you can see it.",
     projectsTitle: "My challenges",
     projectsDescription: "As a web developer, I love taking on new and exciting challenges. I have worked on different types of projects, from e-commerce to games to weather apps. Every project has taught me something new and developed my skills!",
     whoAmI: "Who am I?",
@@ -41,6 +45,8 @@ const languageData = {
     typedOccupation2: "problem solver!",
     typedOccupation3: "ambitious!",
     cvPath: './assets/cv_en.pdf',
+    wordpressProductPageName: "Wordpress product page",
+    wordpressProductPageDescription: "Product page made with wordpress and woocommerce. Use PHP, SASS for styling and Vitejs. Everything is customized except for the product, which is created in the woocommerce dashboard, i.e. dynamic. Unfortunately it's not live so you can see it.",
   },
   sv: {
     navAboutMe: "Om mig",
@@ -52,9 +58,11 @@ const languageData = {
     stenSaxPaseName: "Sten Sax Påse",
     stenSaxPaseDescription: "Sten, sax, påse-spel. Du kan spela mot datorn och se de 5 bästa spelarna och deras högsta poäng.",
     vaderAppName: "Väder App",
+    wordpressProjectLorumName: "Wordpress Projekt",
     vaderAppDescription: "Väderapplikation. Du kan söka efter en stad och välja hur många timmars prognos du vill se.",
     mysqlPhp: "Databashantering",
     databashanteringProjekt: "Webshopapplikation med myql och php. Ett projekt som hanterar databasen och webbservern. Det finns webbshopen och adminsidan som visar beställningarna.",
+    wordpressProjectLorumDescription: "Wordpress projekt som är helt custom, eget tema, använd av php och wordpress editor och sass för styling. Allt innehåll är dynamiskt. Tyvärr är de inte live så att du kan se.",
     projectsTitle: "Mina utmaningar",
     projectsDescription: "Som webbutvecklare älskar jag att ta mig an nya och spännande utmaningar. Jag har arbetat med olika typer av projekt, från e-handel till spel till väderappar. Varje projekt har lärt mig något nytt och utvecklat mina färdigheter!",
     whoAmI: "Vem är jag?",
@@ -70,6 +78,8 @@ const languageData = {
     typedOccupation2: "problemlösare!",
     typedOccupation3: "ambitös!",
     cvPath: './assets/cv_swe.pdf',
+    wordpressProductPageName: "Wordpress produktsida",
+    wordpressProductPageDescription: "Produktsida skapad med wordpress/woocommerce. Använd PHP, Sass, och Vitejs. Allt är custom förutom produkten, är skapad i woocommerce. Tyvärr är de inte live."
   }
 };
 
@@ -164,6 +174,27 @@ languageSelect.addEventListener('change', (event) => {
 
 //array for the projects i want to show on page
 const projectsArray = [
+
+  {
+    nameTranslationKey: 'wordpressProjectLorumName',
+    descriptionTranslationKey: 'wordpressProjectLorumDescription',
+    image: wordpressProjectLorum,
+    link: '#',
+    stats: {
+      htmlCss: 0,
+      javascript: 0,
+    },
+  },
+  {
+    nameTranslationKey: 'wordpressProductPageName',
+    descriptionTranslationKey: 'wordpressProductPageDescription',
+    image: wordpressProductPage,
+    link: '#',
+    stats: {
+      htmlCss: 0,
+      javascript: 0,
+    },
+  },
   {
     nameTranslationKey: 'webbshopName',
     descriptionTranslationKey: 'webbshopDescription',
@@ -172,16 +203,6 @@ const projectsArray = [
     stats: {
       htmlCss: 26.2,
       javascript: 73.8,
-    },
-  },
-  {
-    nameTranslationKey: 'stenSaxPaseName',
-    descriptionTranslationKey: 'stenSaxPaseDescription',
-    image: rps,
-    link: 'https://github.com/andreasgiannoudis/webb23-js2-inlamning1-andreas-giannoudis.git',
-    stats: {
-      htmlCss: 24.9,
-      javascript: 75.1,
     },
   },
   {
@@ -203,7 +224,8 @@ const projectsArray = [
       htmlCss: 0,
       javascript: 0,
     },
-  }
+  },
+  
 ];
 
 
