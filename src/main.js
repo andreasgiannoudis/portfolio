@@ -120,22 +120,7 @@ let currentLanguage = 'sv';
 //typed text that will appear in the about section
 const typedText = document.querySelector("#typed-text");
 
-let typeInstance = typedAnimation(
-  typedText,
-  [
-    "typedName",
-    "typedOccupation1",
-    "typedOccupation2",
-    "typedOccupation3",
-  ],
-  40,
-  25,
-  1500,
-  true,
-  languageData,
-  currentLanguage
-);
-updatePageLanguage();
+
 //call the function to populate the dropdown
 populateLanguageOptions();
 
