@@ -1,5 +1,5 @@
 import { typedAnimation } from "./modules/typedAnimation";
-import { randomAnimation } from "./modules/animatedBackground";
+//import { randomAnimation } from "./modules/animatedBackground";
 import { toggle } from "./modules/toggleDarkLightMode";
 import {scrollBehavior} from "./modules/navBarScroll";
 import webbshopp from './img/projects-img/webbshopp.png';
