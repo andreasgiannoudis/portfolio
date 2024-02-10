@@ -128,13 +128,14 @@ let typeInstance = typedAnimation(
     "typedOccupation2",
     "typedOccupation3",
   ],
-  40,
+  60,
   25,
   1500,
   true,
   languageData,
   currentLanguage
 );
+
 //updatePageLanguage();
 //call the function to populate the dropdown
 populateLanguageOptions();
