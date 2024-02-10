@@ -117,40 +117,49 @@ function updatePageLanguage() {
 //setting the initial language to Swedish
 let currentLanguage = 'sv';
 
-//typed text that will appear in the about section
+// Typed text that will appear in the about section
 const typedText = document.querySelector("#typed-text");
 
-let typeInstance = typedAnimation(
-  typedText,
-  [
-    "typedName",
-    "typedOccupation1",
-    "typedOccupation2",
-    "typedOccupation3",
-  ],
-  40,
-  25,
-  1500,
-  true,
-  languageData,
-  currentLanguage
-);
-updatePageLanguage();
-//call the function to populate the dropdown
-populateLanguageOptions();
+let typeInstance = null;
 
+// Start typing animation only when the DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
-  //call the updatePageLanguage function when the page is loaded
+  // Call the updatePageLanguage function when the page is loaded
   updatePageLanguage();
   const cvLink = document.getElementById('cv-link');
   cvLink.href = languageData[currentLanguage].cvPath;
+
+  // Start typing animation only if typeInstance is null
+  if (!typeInstance) {
+    typeInstance = typedAnimation(
+      typedText,
+      [
+        "typedName",
+        "typedOccupation1",
+        "typedOccupation2",
+        "typedOccupation3",
+      ],
+      40,
+      25,
+      1500,
+      true,
+      languageData,
+      currentLanguage
+    );
+  }
 });
 
+// Update language and recreate the typing animation
 languageSelect.addEventListener('change', (event) => {
   currentLanguage = event.target.value;
   updatePageLanguage();
-  typeInstance.destroy();
   
+  // Destroy the previous typing animation instance
+  if (typeInstance) {
+    typeInstance.destroy();
+  }
+
+  // Recreate typing animation with the new language
   typeInstance = typedAnimation(
     typedText,
     [
@@ -167,6 +176,7 @@ languageSelect.addEventListener('change', (event) => {
     currentLanguage
   );
 
+  // Update CV link
   const cvLink = document.getElementById('cv-link');
   cvLink.href = languageData[currentLanguage].cvPath;
 });
