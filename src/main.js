@@ -46,7 +46,7 @@ const languageData = {
     typedOccupation3: "ambitious!",
     cvPath: './assets/cv_en.pdf',
     wordpressProductPageName: "Wordpress product page",
-    wordpressProductPageDescription: "Product page made with wordpress and woocommerce. Use PHP, SASS for styling and Vitejs. Everything is customized except for the product, which is created in the woocommerce dashboard, i.e. dynamic. Unfortunately it's not live so you can see it.",
+    wordpressProductPageDescription: "Product page created with wordpress/woocommerce. Use PHP, Sass and Vitejs. Everything is customized except the product, is created in woocommerce. Unfortunately they are not live.",
   },
   sv: {
     navAboutMe: "Om mig",
