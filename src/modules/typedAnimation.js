@@ -11,20 +11,19 @@ export function typedAnimation(selector, translationKeys, typeSpeed, backSpeed, 
   
   const strings = translationKeys.map(key => languageData[currentLanguage][key]);
 
-  // Initialize the typing animation
   typeInstance = new Typed(selector, {
     strings,
     typeSpeed,
     backSpeed,
     backDelay,
     loop,
-    // Callback function to throttle DOM updates
+
     onStringTyped: function() {
       if (!throttleTimer) {
         throttleTimer = setTimeout(() => {
           throttleTimer = null;
           updatePageLanguage();
-        }, 100); // Adjust the throttle duration as needed
+        }, 100);
       }
     }
   });
@@ -32,5 +31,3 @@ export function typedAnimation(selector, translationKeys, typeSpeed, backSpeed, 
   // Return the typing instance
   return typeInstance;
 }
-
-// Your other code remains the same
