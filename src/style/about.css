@@ -15,12 +15,15 @@
   .dark-theme .i-am{
     color: rgb(242, 242, 242);
   }
+  .about-text #typed-text{
+    font-size: 2rem;
+  }
 
   .light-theme .description-me, .i-am{
     color: black;
   }
   .i-am {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
   .dark-theme .about-text span {
     font-size: 3rem;
