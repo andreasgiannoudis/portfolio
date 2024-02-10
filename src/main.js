@@ -135,7 +135,7 @@ let typeInstance = typedAnimation(
   languageData,
   currentLanguage
 );
-updatePageLanguage();
+//updatePageLanguage();
 //call the function to populate the dropdown
 populateLanguageOptions();
 
