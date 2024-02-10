@@ -10,16 +10,13 @@ export function typedAnimation(selector, translationKeys, typeSpeed, backSpeed, 
   
   const strings = translationKeys.map(key => languageData[currentLanguage][key]);
 
-  // Initialize the typing animation after the page has loaded
-  document.addEventListener('DOMContentLoaded', () => {
-    // Initialize the typing animation
-    typeInstance = new Typed(selector, {
-      strings,
-      typeSpeed: typeSpeed,  // Adjust as needed
-      backSpeed: backSpeed,  // Adjust as needed
-      backDelay: backDelay,  // Adjust as needed
-      loop,
-    });
+  // Initialize the typing animation
+  typeInstance = new Typed(selector, {
+    strings,
+    typeSpeed,
+    backSpeed,
+    backDelay,
+    loop,
   });
 
   // Return the typing instance
